@@ -1,145 +1,236 @@
-/* 
 
-display: flex;
-flex-direction: row | row-reverse | column | column-reverse;
-flex-wrap: wrap | nowrap | wrap-reverse;
-justify-content: start | end | center et al;
-
-
-*/
-
-/* ------ base and universal styles ----- */
-
-/* 1. reset the margin and padding to 0 using the universal selector */
 * {
-	/* let's come back to what box-sizing means - it will make more sense when we can visualize it. */
 	padding: 0;
 	margin: 0;
 }
 
 body {
-	background-color: white;
-	color: #F2F2F2;
-	font-family: "futura-pt", sans-serif;
-	display: flex;
-	margin: 5%;
+	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1031%26quot%3b)' fill='none'%3e%3crect width='1440' height='560' x='0' y='0' fill='rgba(165%2c 168%2c 169%2c 1)'%3e%3c/rect%3e%3cpath d='M0%2c407.019C80.264%2c404.997%2c163.459%2c402.853%2c231.212%2c359.773C299.115%2c316.598%2c332.236%2c239.777%2c372.551%2c170.138C417.185%2c93.038%2c474.428%2c20.024%2c479.388%2c-68.926C484.873%2c-167.304%2c475.394%2c-282.742%2c401.432%2c-347.842C327.373%2c-413.028%2c212.823%2c-381.512%2c114.534%2c-390.067C36.613%2c-396.85%2c-38.299%2c-406.31%2c-115.344%2c-392.824C-200.642%2c-377.893%2c-297.537%2c-372.385%2c-355.256%2c-307.831C-413.108%2c-243.128%2c-408.47%2c-146.095%2c-413.429%2c-59.442C-418.022%2c20.816%2c-413.063%2c100.348%2c-382.882%2c174.856C-351.733%2c251.753%2c-309.764%2c328.596%2c-238.821%2c371.613C-168.583%2c414.202%2c-82.115%2c409.088%2c0%2c407.019' fill='%238b8f91'%3e%3c/path%3e%3cpath d='M1440 1014.4870000000001C1529.53 1016.387 1624.975 1013.245 1697.721 961.0219999999999 1769.268 909.6600000000001 1787.526 815.472 1826.941 736.71 1868.028 654.607 1935.27 580.781 1933.9479999999999 488.981 1932.565 393 1881.537 304.408 1819.656 231.026 1757.232 157 1677.297 95.03800000000001 1583.039 72.85399999999998 1491.115 51.218999999999994 1400.191 89.93 1308.049 110.618 1208.997 132.85700000000003 1088.66 121.24099999999999 1022.932 198.608 957.2090000000001 275.969 993.957 393.351 982.192 494.177 970.81 591.72 914.318 692.11 954.9110000000001 781.533 995.5129999999999 870.977 1100.666 907.71 1189.213 950.233 1268.612 988.363 1351.94 1012.619 1440 1014.4870000000001' fill='%23bfc1c2'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1031'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e");
+	background-size: cover,contain;
+	color: black;
+	font-family: "Urbanist", sans-serif;
 }
 
 header {
-	display: flex;
-	flex-direction: column;
-	padding: 2%;
-	
-}
-
-
-#logo {
-	width: 75%;
-	align-self: center;
-}
-
-h1 {
-	color: white;
-	text-shadow: 1px 1px #0d0d0d;
-	font-size: 25px;
-	letter-spacing: .0125em;
-	text-align: center;
+	display:flex;
+	justify-content: space-between;
+	margin: 2%;
 }
 
 nav {
-display: flex;
-flex-direction: column;
-gap: 10px;
-align-items: center;
-padding-top: 10%;
+	display: flex;
+	gap: 75px;
+	justify-content: center;
+	margin: 2%;
+	padding-right: 2%;
 }
 
-p{
-	font-size: 15px;	
+.logo {
+	width: 100px;
+	transition: tranform 0.3s ease;
 }
+
 
 a {
 	text-decoration: none;
-	color: grey;
-	text-shadow: 1px 1px #0d0d0d;
-	font-size: 25px;
+	color: rgb(78, 77, 77);
+	font-size: 20px;
+	font-weight: bold;
+	font-style: italic;
+	transition: transform 0.2s ease;
 }
 
 a:hover {
-	text-decoration: overline;
-	color: #0d0d0d;
-}
-
-
-section {
-	background-color: red;
-	width: 100%;
-	display: flex;
-	padding: 5%;
-	flex-wrap: wrap;
-}
-
-article {
-	/* border is just to show space, be sure to delete it when complete */
-/*  9. let's set a width - remember that it will be a percentage of the parent container */
-	width: 100%;
-	padding: 5%;
-	background-color: #730202;
-}
-
-.intro {
-	display: flex;
-	justify-content: space-between;
-	background-color: white;
-	padding: 5%;
-	align-items: center;
-}
-
-.Name {
-	font-size: 100px;
 	color: black;
-	padding-left: 10%;
+	transform: scale(1.1);
 }
 
-#portrait {
-	border-radius: 50%;
-	height: 20%;
-	width: 25%;
+
+.content {
+	display: flex;
+	padding-left: 5%;
+	padding-top: 5%;
+	background-color: rgb(212, 212, 212);
+	border-radius: 100px;
+	margin: 5%;
+	background: rgba(255, 255, 255, 0.36);
+	border-radius: 75px;
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(5px);
+	-webkit-backdrop-filter: blur(5px);
+	border: 1px solid rgba(255, 255, 255, 0.14);
+	/* used this as a guide for glassmorphism
+	https://css.glass/
+	*/
 }
 
 .bio {
-	background-color: coral;
-	
-}
-.bio-wrap {
-	background-color: purple;
-	padding-bottom: 45%;
-
+	display: block;
+	width: 100%;
+	padding: 3%;
+	text-align: justify;
 }
 
-h2 {
-	text-align: center;
-}
-.about {
-	display: flex;
-	flex-direction: row-reverse;
-	justify-content: space-between;
-	padding-top: 5%;
-	gap: 10px;
-	
+.Name {
+	font-size: 95px;
+	font-weight: 700;
+	color: black;
 }
 
 .abtme {
-	width: 50%;
-	border: 2px solid black;
+	font-size: 20px;
 }
 
-.context {
-	text-align: justify;
-	border: 2px solid black;
+.picture{
+width: 50%;
+margin: 2%;
+padding-right: 2%;
+}
+
+#portrait {
+	height: 100%;
+	width: 100%;
+	border-radius: 100px;
+	transition: transform 0.2s ease;
+
+}
+#portrait:hover {
+	transform: scale(1.1);
+}
+
+#linkedin {
+	height: 10%;
+	padding-top: 15%;
+	transition: transform 0.2s ease;
+}
+
+#linkedin:hover {
+	transform: scale(1.1);
+}
+
+#email {
+	height: 10%;
+	transition: transform 0.2s ease;
+}
+
+#email:hover{
+	transform: scale(1.1);
+}
+
+.tenor-gif-embed {
+	height: 200px;
+	width: 200px;
+}
+
+/* /////////// INSPO PAGE CONTENT //////////// */
+
+.title{
+	font-size: 65px;
+	text-align: center;
+	padding-top: 25px;
+}
+
+.inspo-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	align-items: flex-start;
+}
+
+.info {
+	text-align: center;
+	background: rgba(255, 255, 255, 0.08);
+	border-radius: 25px;
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(5px);
+	-webkit-backdrop-filter: blur(5px);
+	border: 1px solid rgba(255, 255, 255, 0.05);
+	padding-top: 2%;
+	padding-right: 5%;
+	padding-left: 5%;
+	padding-bottom: 5%;
+	text-align: left;
+	max-width: 400px;
+}
+
+.inspo{
+	display: flex;
+	flex-direction: column;
+	padding-top: 3%;
+	padding-left: 3%;
+	padding-right: 3%;
+}
+
+.pic{
+	width: 400px;
+	height: 300px;
+	border-radius: 25px;
+	padding-bottom: 4%;
+}
+
+/* /////////// TOP 5 INSPO ///////// */
+
+.pic-list{
+	width: 300px;
+	height: 300px;
+	border-radius: 25px;
+	padding-bottom: 4%;
+}
+
+.list-container{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	align-items: flex-start;
+	padding-left:5%;
+	padding-right: 5%;
+	padding-bottom:5%;
+	flex-wrap: wrap;
 
 }
 
+.bev{
+	display: flex;
+	flex-direction: column;
+	padding-top: 3%;
+	padding-left: 3%;
+	padding-right: 3%;
+}
 
+.place{
+	display: flex;
+	flex-direction: column;
+	padding-top: 3%;
+	padding-left: 3%;
+	padding-right: 3%;
+}
 
+.pic-place{
+	width: 300px;
+	height: 200px;
+	border-radius: 25px;
+	padding-bottom: 4%;
+}
 
+.item-name {
+	text-align: center;
+	color: black;
+	transition: tranform 0.3s ease;
+
+}
+
+.item-name:hover{
+	color:grey;
+	transform: scale(1.1);
+
+}
+
+.inspo-name {
+	color: black;
+	transition: tranform 0.3s ease;
+}
+
+.inspo-name:hover{
+	color: grey;
+	transform: scale(1.1);
+}
